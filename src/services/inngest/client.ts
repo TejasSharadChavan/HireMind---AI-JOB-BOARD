@@ -8,6 +8,17 @@ type Events = {
   "clerk/organization.created": ClerkWebhookData<OrganizationJSON>
   "clerk/organization.deleted": ClerkWebhookData<DeletedObjectJSON>
   "clerk/organization.updated": ClerkWebhookData<OrganizationJSON>
+  "app/jobListingApplication.created":{
+    data:{
+      jobListingId:string
+      userId:string
+    }
+  }
+  "app/resume.uploaded":{
+    user:{
+      id:string
+    }
+  }
 };
 
 type ClerkWebhookData<T> = {

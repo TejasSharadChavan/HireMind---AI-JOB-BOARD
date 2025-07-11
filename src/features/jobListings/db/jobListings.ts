@@ -1,5 +1,5 @@
 import { db } from "@/drizzle/db";
-import { JobListingTable, OrganizationTable } from "@/drizzle/schema";
+import { JobListingTable } from "@/drizzle/schema";
 import { revalidateJobListingCache } from "./cache/jobListings";
 import { eq } from "drizzle-orm";
 
@@ -30,4 +30,16 @@ export async function updateJobListing(
     });
   revalidateJobListingCache(updatedListing);
   return updatedListing;
+}
+
+export async function deleteJobListing(id:string) {
+   const [deletedListing] = await db
+    .delete(JobListingTable)
+    .where(eq(JobListingTable.id, id))
+    .returning({
+      id: JobListingTable.id,
+      organizationId: JobListingTable.organizationId,
+    });
+  revalidateJobListingCache(deletedListing);
+  return deletedListing;
 }

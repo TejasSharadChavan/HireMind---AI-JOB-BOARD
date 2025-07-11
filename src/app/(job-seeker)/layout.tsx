@@ -12,16 +12,20 @@ import { BrainCircuitIcon, ClipboardListIcon, LayoutDashboard, LogInIcon } from 
 import Link from "next/link";
 import { ReactNode } from "react";
 
-export default function JobSeekerLayout({ children }: { children: ReactNode }) {
+export default function JobSeekerLayout({ children, sidebar }: { children: ReactNode, sidebar:ReactNode }) {
   return (
     <AppSidebar
       content={
+        <>
+        {sidebar}
         <SidebarNavMenuGroup className="mt-auto" items={[
             {href:"/", icon:<ClipboardListIcon/>, label:"Job Board"},
             {href:"/ai-search", icon:<BrainCircuitIcon/>, label:"AI Search"},
             {href:"/employer", icon:<LayoutDashboard/>, label:"Employer Dashobard", authStatus:"signedIn"},
             {href:"/sign-in", icon:<LogInIcon/>, label:"Sign in", authStatus:"signedOut"}
         ]}/>
+
+        </>
       }
       footerButton={<SidebarUserButton />}
     >
