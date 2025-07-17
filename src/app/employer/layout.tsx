@@ -19,7 +19,7 @@ import {
 import { getJobListingApplicationJobListingTag } from "@/features/jobListingApplications/db/cache/jobListingApplications";
 import { getJobListingOrganizationTag } from "@/features/jobListings/db/cache/jobListings";
 import { sortJobListingsByStatus } from "@/features/jobListings/lib/utils";
-import { SidebarOrganizationButton } from "@/features/organizations/components/components/SidebarOrganizationButton";
+import { SidebarOrganizationButton } from "@/features/organizations/components/SidebarOrganizationButton";
 import { getCurrentOrganization } from "@/services/clerk/lib/getCurrentAuth";
 import { hasOrgUserPermission } from "@/services/clerk/lib/orgUserPermissions";
 import { count, desc, eq } from "drizzle-orm";

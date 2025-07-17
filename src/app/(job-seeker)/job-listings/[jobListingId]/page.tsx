@@ -18,7 +18,7 @@ import {
   JobListingTable,
   UserResumeTable,
 } from "@/drizzle/schema";
-import { getOrganizationIdTag } from "@/features/organizations/db/cache/users";
+import { getOrganizationIdTag } from "@/features/organizations/db/cache/organizations";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";

@@ -26,7 +26,7 @@ import { JobListingBadges } from "@/features/jobListings/components/JobListingBa
 import { z } from "zod";
 import { cacheTag } from "next/dist/server/use-cache/cache-tag";
 import { getJobListingGlobalTag } from "@/features/jobListings/db/cache/jobListings";
-import { getOrganizationIdTag } from "@/features/organizations/db/cache/users";
+import { getOrganizationIdTag } from "@/features/organizations/db/cache/organizations";
 
 type Props = {
   searchParams: Promise<Record<string, string | string[]>>;

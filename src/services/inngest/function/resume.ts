@@ -24,7 +24,7 @@ export const createAiSummaryOfUploadedResume = inngest.createFunction(
     if (userResume == null) return;
     const result = await step.ai.infer("create-ai-summary", {
       model: step.ai.models.anthropic({
-        model: "claude-3-5-sonnet-latest",
+        model: "claude-3-5-haiku-latest",
         defaultParameters: { max_tokens: 2048 },
         apiKey: env.ANTHROPIC_API_KEY,
       }),

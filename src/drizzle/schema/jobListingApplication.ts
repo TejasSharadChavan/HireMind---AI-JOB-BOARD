@@ -17,6 +17,7 @@ export const applicationStages = [
   "applied",
   "interested",
   "interviewed",
+  "hired"
 ] as const;
 export type ApplicationStage = (typeof applicationStages)[number];
 export const applicationStageEnum = pgEnum(
@@ -45,7 +46,7 @@ export const JobListingApplicationTable = pgTable(
 export const jobListingApplicationRelations = relations(
   JobListingApplicationTable,
   ({ one }) => ({
-    organization: one(JobListingTable, {
+    jobListing: one(JobListingTable, {
       fields: [JobListingApplicationTable.jobListingId],
       references: [JobListingTable.id],
     }),
